@@ -3,7 +3,6 @@ from major_chord_generator import generate_major_chords
 from minor_chord_generator import generate_minor_chords
 
 def search(symbol):
-    # Dictionary mapping note symbols to MIDI note numbers for major and minor keys
     note_mapping = {
         'C': 48, 'Cm': 48, 'C#': 49, 'C#m': 49,
         'Db': 49, 'Dbm': 49, 'D': 50, 'Dm': 50,
@@ -16,8 +15,6 @@ def search(symbol):
         'B': 47, 'Bm': 47
     }
     return note_mapping.get(symbol, None)
-
-
 def generate_chords(scale_chords, num_bars):
     chords = []
     maxi = search(scale_chords[0])
@@ -36,10 +33,7 @@ def generate_chords(scale_chords, num_bars):
                 print(f"Ignoring invalid chord symbol: {symbol}")
         else:
             print(f"Ignoring invalid chord symbol: {symbol}")
-    
-    # Extend chords list until it reaches the desired number of bars
     while len(chords) < num_bars:
         random_chord = random.choice(chords)
         chords.append(random_chord)
-    
-    return chords[:num_bars]  # Truncate to the desired number of bars
+    return chords[:num_bars]
