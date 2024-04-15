@@ -1,6 +1,6 @@
 # Automatic-Music-Chords-Generation-
 
-Project Title: Interactive Music Generation with User-Defined Chords (Python)
+Project Title: Interactive Music Generation with Python.
 
 Description:
 
