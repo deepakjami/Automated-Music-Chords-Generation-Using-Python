@@ -1,6 +1,5 @@
 import random
 
-# Define the keys and their respective major and minor scales in the circle of fifths
 circle_of_fifths = {
     "C": [["C", "Dm", "Em", "F", "G", "Am"], ["Cm", "Eb", "Fm", "Gm", "Ab"]],
     "G": [["G", "Am", "Bm", "C", "D", "Em"], ["Gm", "Am", "Bb", "Cm", "Dm", "Eb"]],
@@ -26,15 +25,12 @@ def generate_scale_chords(key, scale_type, num_bars):
     scale = circle_of_fifths.get(key)[scale_type]
     main_key_chord = scale[0]
     
-    # For 4 bars
     if num_bars == 4:
         chords = [main_key_chord]
         while len(chords) < 4:
             chord = random.choice(scale[1:])
             if chord not in chords:
                 chords.append(chord)
-    
-    # For 8 bars
     elif num_bars == 8:
         chords = [main_key_chord]
         repeat_chords = random.sample(scale[1:], 3)
